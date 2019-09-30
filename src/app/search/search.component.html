@@ -1,0 +1,26 @@
+<form style="width: 500px;
+margin-left: 383px; margin-top: 100px ">
+<input class="form-control-lg" type="text" placeholder="Github user name" style="width: 500px" [(ngModel)]="userName" [ngModelOptions]="{standalone: true}"><br>
+
+<button type="submit" class="btn btn-primary" style="width: 100px; margin: 20px" (click)="getDetails()">Find me</button>
+
+
+</form>
+<div class="loader" *ngIf="isAvailable">
+  
+</div>
+
+<div *ngIf="profile else hii"> 
+
+<div class="card" style="width: 18rem; margin-left: 500px ">
+  <img src={{profile.avatar_url}} class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{profile.name}}</h5>
+    <p class="card-text">bio</p>
+    <a href="#" class="btn btn-primary">details</a>
+  </div>
+
+  <ng-template #hii>
+    <div class="display">NO DATA TO DISPLAY</div>
+  </ng-template>
+</div>
